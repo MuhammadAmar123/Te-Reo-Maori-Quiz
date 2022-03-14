@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Te Reo Maori Quiz", "Te Reo Maori Quiz\Te Reo Maori Quiz.csproj", "{72F73DC4-60B7-41BF-B044-A8F8942111CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72F73DC4-60B7-41BF-B044-A8F8942111CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F73DC4-60B7-41BF-B044-A8F8942111CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F73DC4-60B7-41BF-B044-A8F8942111CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F73DC4-60B7-41BF-B044-A8F8942111CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C798B466-6936-4DCD-BE72-F0DCBCB26ECD}
+	EndGlobalSection
+EndGlobal
