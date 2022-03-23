@@ -119,7 +119,73 @@ namespace methods
                 }
             }
         Q6E:
-            Console.WriteLine("Q6: What is a marae?");
+            Console.WriteLine("Q6: What does Aotearoa mean? \nA) Auckland B) New Zealand C) Wellington");
+            string ans6= Console.ReadLine().ToLower();
+            if (ans6 == "new zealand" || ans6 == "b")
+            {
+                Console.WriteLine("You got it correct!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! Try again?");
+
+                while (Console.ReadLine().ToLower() == "yes")
+                {
+                    goto Q6E;
+                }
+            }
+        Q7E:
+            Console.WriteLine("Q7: What does Whānau mean? \nA) Building B) Family C) Supermarket");
+            string ans7 = Console.ReadLine().ToLower();
+            if (ans7 == "family" || ans7 == "b")
+            {
+                Console.WriteLine("You got it correct!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! Try again?");
+
+                while (Console.ReadLine().ToLower() == "yes")
+                {
+                    goto Q7E;
+                }
+            }
+        Q8E:
+            Console.WriteLine("Q7: What does Kia Kaha mean? \nA) Stay Strong B) Believe C) Good Night");
+            string ans8 = Console.ReadLine().ToLower();
+            if (ans8 == "stay strong" || ans8 == "a")
+            {
+                Console.WriteLine("You got it correct!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! Try again?");
+
+                while (Console.ReadLine().ToLower() == "yes")
+                {
+                    goto Q8E;
+                }
+            }
+        Q9E:
+            Console.WriteLine("Q7: How do you say love in Maori? \nA) Waiata B) Marae C) Aroha");
+            string ans9 = Console.ReadLine().ToLower();
+            if (ans9 == "aroha" || ans9 == "c")
+            {
+                Console.WriteLine("You got it correct!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! Try again?");
+
+                while (Console.ReadLine().ToLower() == "yes")
+                {
+                    goto Q9E;
+                }
+            }
+
+
+
+
         }
 
         
