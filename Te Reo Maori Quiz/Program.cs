@@ -35,8 +35,7 @@ namespace methods
         static void Easy()
         {
             Q1E:
-            Console.WriteLine("Q1: How do you say well done in Maori?");
-            Console.Write("A) Kia Ora, B) Ka Pai, C) Taniwha? ");
+            Console.WriteLine("Q1: How do you say well done in Maori? \nA) Kia Ora, B) Ka Pai, C) Taniwha? ");
             string ans1 = Console.ReadLine().ToLower();
             if (ans1 == "ka pai" || ans1 == "b")
             {
@@ -54,8 +53,7 @@ namespace methods
             Console.WriteLine("\n");
         Q2E:
             
-            Console.WriteLine("Q2: How do you say Food in Maori?");
-            Console.Write("A) Kai, B) Pā C) Wai ");
+            Console.WriteLine("Q2: How do you say Food in Maori? \nA) Kai, B) Pā C) Wai ");
             string ans2 = Console.ReadLine().ToLower();
             if (ans2 == "kai" || ans2 == "a")
             {
@@ -70,11 +68,61 @@ namespace methods
                     goto Q2E;
                 }
             }
+            Console.WriteLine("\n");
+        Q3E:
+            Console.WriteLine("Q3: How do you say tribe in Maori? \nA) Iwi B) Kauri C)Mahi ");
+            string ans3 = Console.ReadLine().ToLower();
+            if (ans3 == "iwi" || ans3 == "a")
+            {
+                Console.WriteLine("You got it correct!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! Try again?");
+
+                while (Console.ReadLine().ToLower() == "yes")
+                {
+                    goto Q3E;
+                }
+            }
+
+        Q4E:
+            Console.WriteLine("Q4: How do you say sea in Maori? \nA) Puku B) Motu C) Moana");
+            string ans4 = Console.ReadLine().ToLower();
+            if (ans4 == "moana" || ans4 == "c")
+            {
+                Console.WriteLine("You got it correct!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! Try again?");
+
+                while (Console.ReadLine().ToLower() == "yes")
+                {
+                    goto Q4E;
+                }
+            }
+        Q5E:
+            Console.WriteLine("Q5: What does mahi mean? \nA) Work B) Pencil C) Water");
+            string ans5 = Console.ReadLine().ToLower();
+            if (ans5 == "work" || ans5 == "c")
+            {
+                Console.WriteLine("You got it correct!");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect! Try again?");
+
+                while (Console.ReadLine().ToLower() == "yes")
+                {
+                    goto Q5E;
+                }
+            }
+        Q6E:
+            Console.WriteLine("Q6: What is a marae?");
         }
-        public static string Retry()
-        {
-            return x % y;
-        }
+
+        
     }
 
 }
