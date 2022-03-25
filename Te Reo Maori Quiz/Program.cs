@@ -24,7 +24,10 @@ namespace methods
                         Easy();
                         break;
                     case "medium":
-                        Console.WriteLine("Great you selected medium!");
+                        Console.WriteLine("Great you selected medium! \nClick enter to begin");
+                        Console.ReadKey();
+                        Console.Clear();
+                        Medium();
                         break;
                     case "hard":
                         Console.WriteLine("Prepare youself for the hardest thing in your life!");
@@ -41,7 +44,7 @@ namespace methods
             static void Easy()
             {
             Q1E:
-                Console.WriteLine("Q1: How do you say well done in Maori? \nA) Kia Ora, B) Ka Pai, C) Taniwha? ");
+                Console.WriteLine("Q1: How do you say well done in Maori? \nA) Kia Ora, B) Ka Pai, C) Taniwha ");
                 string ans1 = Console.ReadLine().ToLower();
                 if (ans1 == "ka pai" || ans1 == "b")
                 {
@@ -76,7 +79,7 @@ namespace methods
                 }
                 Console.WriteLine("\n");
             Q3E:
-                Console.WriteLine("Q3: How do you say tribe in Maori? \nA) Iwi B) Kauri C)Mahi ");
+                Console.WriteLine("Q3: How do you say tribe in Maori? \nA) Iwi B) Kauri C) Mahi ");
                 string ans3 = Console.ReadLine().ToLower();
                 if (ans3 == "iwi" || ans3 == "a")
                 {
@@ -189,9 +192,9 @@ namespace methods
                     }
                 }
             Q10E:
-                Console.WriteLine("Q10: How do you say love in Maori? \nA) Waiata B) Marae C) Aroha");
+                Console.WriteLine("Q10: What is a Kiwi? \nA) A lizard B) The word for people C) Native NZ bird");
                 string ans10 = Console.ReadLine().ToLower();
-                if (ans10 == "aroha" || ans10 == "c")
+                if (ans10 == "native nz bird" || ans10 == "c")
                 {
                     Console.WriteLine("You got it correct!");
                 }
@@ -204,15 +207,68 @@ namespace methods
                         goto Q10E;
                     }
                 }
-                
+
+
 
 
 
             }
 
 
-        }
+            static void Medium()
+            {
+            Q1M:
+                Console.WriteLine("Q1: What does motu mean? \nA) Island, B) Salt, C) Computer");
+                string ans1 = Console.ReadLine().ToLower();
+                if (ans1 == "island" || ans1 == "a")
+                {
+                    Console.WriteLine("Ka Pai! You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    string again1 = Console.ReadLine().ToLower();
+                    while (again1 == "yes")
+                    {
+                        goto Q1M;
+                    }
+                }
+            Q2M:
+                Console.WriteLine("Q2: How do you say children in Maori? \nA) Tapu, B) Moa, C) Tamariki");
+                string ans2 = Console.ReadLine().ToLower();
+                if (ans2 == "tamariki " || ans2 == "c")
+                {
+                    Console.WriteLine("Ka Pai! You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    string again1 = Console.ReadLine().ToLower();
+                    while (again1 == "yes")
+                    {
+                        goto Q2M;
+                    }
+                }
+             Q3M:
+                Console.WriteLine("Q1: What does puku mean? \nA) Tapu, B) Moa, C) Tamariki");
+                string ans3 = Console.ReadLine().ToLower();
+                if (ans3 == "tamariki " || ans3 == "c")
+                {
+                    Console.WriteLine("Ka Pai! You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    string again1 = Console.ReadLine().ToLower();
+                    while (again1 == "yes")
+                    {
+                        goto Q3M;
+                    }
+                }
 
+            }
+
+        }
     }
 }
 
