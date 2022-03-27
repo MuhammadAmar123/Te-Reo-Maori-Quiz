@@ -10,7 +10,7 @@ namespace methods
             Intro();
             void Intro()
             {
-               
+
                 Console.Write("This is a Te Reo Maori Quiz! \nPress any key to start!");
                 Console.ReadKey(); //waits for user to input key
                 Console.WriteLine("Would you like an easy, medium, or hard level?");
@@ -31,7 +31,10 @@ namespace methods
                         Medium();
                         break;
                     case "hard":
-                        Console.WriteLine("Prepare youself for the hardest thing in your life!");
+                        Console.WriteLine("Prepare youself for the hardest thing in your life! \nClick enter to begin");
+                        Console.ReadKey();
+                        Console.Clear();
+                        Hard();
                         break;
                     default:
                         Console.WriteLine("Please enter your level again");
@@ -291,7 +294,7 @@ namespace methods
                 }
             Q5M:
                 Console.WriteLine("\n");
-                Console.WriteLine("Q5: What does wahine mean? \nA) Cousin, B) Flowers, C) Woman/Wife ");
+                Console.WriteLine("Q5: What does wahine? \nA) Cousin, B) Flowers, C) Woman/Wife ");
                 string ans5 = Console.ReadLine().ToLower();
                 if (ans5 == "woman" || ans5 == "c" || ans5 == "woman/wife")
                 {
@@ -309,7 +312,7 @@ namespace methods
                 Console.WriteLine("\n");
                 Console.WriteLine("Q6: What does Iti mean? \nA) Small, B) Fan, C) Pencil ");
                 string ans6 = Console.ReadLine().ToLower();
-                if (ans6 == "woman" || ans6 == "c" || ans6 == "woman/wife")
+                if (ans6 == "small" || ans6 == "a")
                 {
                     Console.WriteLine("You got it correct");
                 }
@@ -371,7 +374,7 @@ namespace methods
                 }
             Q10M:
                 Console.WriteLine("\n");
-                Console.WriteLine("Q10: How do you say funeral? \nA) Hui, B) Waiata, C) Tangi ");
+                Console.WriteLine("Q10: How do you say funeral in Maori? \nA) Hui, B) Waiata, C) Tangi ");
                 string ans10 = Console.ReadLine().ToLower();
                 if (ans10 == "tangi" || ans10 == "c")
                 {
@@ -387,6 +390,60 @@ namespace methods
                 }
 
             }
+
+
+            static void Hard()
+            {
+                Q1H:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q1: What does Maunga mean? \nA) Mountain, B) Waiata, C) Tangi ");
+                string ans1 = Console.ReadLine().ToLower();
+                if (ans1 == "mountain" || ans1 == "a")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    if (Console.ReadLine() == "yes")
+                    while (true)
+                    {
+                        goto Q1H;
+                    }
+                    else if (Console.ReadLine() != "no" )
+                    {
+                        Console.WriteLine("Please enter yes or no");
+
+                    }
+                }
+                do
+                {
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Q1: What does Maunga mean? \nA) Mountain, B) Waiata, C) Tangi ");
+                    string ans1 = Console.ReadLine().ToLower();
+                    if (ans1 == "mountain" || ans1 == "a")
+                    {
+                        Console.WriteLine("You got it correct");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect! Try again?");
+                        string again1 = Console.ReadLine();
+                        if (Console.ReadLine() == "yes")
+                            while (true)
+                            {
+                                goto Q1H;
+                            }
+                        else if (Console.ReadLine() != "no")
+                        {
+                            Console.WriteLine("Please enter yes or no");
+
+                        }
+                    }
+                }
+                while (again1 =);
+            }
+
         }
     }
 }
