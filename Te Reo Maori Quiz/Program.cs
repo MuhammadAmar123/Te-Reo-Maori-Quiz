@@ -53,8 +53,7 @@ namespace methods
                 else
                 {
                     Console.WriteLine("Incorrect! Try again?");
-                    string again1 = Console.ReadLine().ToLower();
-                    while (again1 == "yes")
+                    while (Console.ReadLine().ToLower() == "yes")
                     {
                         goto Q1E;
                     }
@@ -227,8 +226,7 @@ namespace methods
                 else
                 {
                     Console.WriteLine("Incorrect! Try again?");
-                    string again1 = Console.ReadLine().ToLower();
-                    while (again1 == "yes")
+                    while (Console.ReadLine().ToLower() == "yes")
                     {
                         goto Q1M;
                     }
@@ -243,13 +241,12 @@ namespace methods
                 else
                 {
                     Console.WriteLine("Incorrect! Try again?");
-                    string again1 = Console.ReadLine().ToLower();
-                    while (again1 == "yes")
+                    while (Console.ReadLine().ToLower() == "yes")
                     {
                         goto Q2M;
                     }
                 }
-             Q3M:
+            Q3M:
                 Console.WriteLine("Q1: What does puku mean? \nA) Tapu, B) Moa, C) Tamariki");
                 string ans3 = Console.ReadLine().ToLower();
                 if (ans3 == "tamariki " || ans3 == "c")
@@ -265,9 +262,40 @@ namespace methods
                         goto Q3M;
                     }
                 }
+            Q4M:
+                Console.WriteLine("Q1: What does hangi mean? \nA) Traditional Maori dance, B) Food made in earth oven, C) Sun");
+                string ans4 = Console.ReadLine().ToLower();
+                if (ans4 == "Food made in earth oven " || ans4 == "b")
+                {
+                    Console.WriteLine("Ka Pai! You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    string again1 = Console.ReadLine().ToLower();
+                    while (again1 == "yes")
+                    {
+                        goto Q4M;
+                    }
+                }
+            Q5M:
+                Console.WriteLine("Q1: What does hangi mean? \nA) Traditional Maori dance, B) Food made in earth oven, C) Sun");
+                string ans5 = Console.ReadLine().ToLower();
+                if (ans5 == "Food made in earth oven " || ans5 == "b")
+                {
+                    Console.WriteLine("Ka Pai! You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    string again1 = Console.ReadLine().ToLower();
+                    while (again1 == "yes")
+                    {
+                        goto Q5M;
+                    }
+                }
 
             }
-
         }
     }
 }
