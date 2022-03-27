@@ -10,6 +10,7 @@ namespace methods
             Intro();
             void Intro()
             {
+               
                 Console.Write("This is a Te Reo Maori Quiz! \nPress any key to start!");
                 Console.ReadKey(); //waits for user to input key
                 Console.WriteLine("Would you like an easy, medium, or hard level?");
@@ -33,9 +34,10 @@ namespace methods
                         Console.WriteLine("Prepare youself for the hardest thing in your life!");
                         break;
                     default:
-                        Console.WriteLine("Please enter your level again and use uppercase letters");
+                        Console.WriteLine("Please enter your level again");
                         while (level != "easy" || level != " medium" || level != "hard")
                         {
+                            Console.WriteLine("\n");
                             Intro();
                         }
                         break;
@@ -44,6 +46,7 @@ namespace methods
             static void Easy()
             {
             Q1E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q1: How do you say well done in Maori? \nA) Kia Ora, B) Ka Pai, C) Taniwha ");
                 string ans1 = Console.ReadLine().ToLower();
                 if (ans1 == "ka pai" || ans1 == "b")
@@ -58,9 +61,8 @@ namespace methods
                         goto Q1E;
                     }
                 }
-                Console.WriteLine("\n");
             Q2E:
-
+                Console.WriteLine("\n");
                 Console.WriteLine("Q2: How do you say Food in Maori? \nA) Kai, B) Pā C) Wai ");
                 string ans2 = Console.ReadLine().ToLower();
                 if (ans2 == "kai" || ans2 == "a")
@@ -76,8 +78,8 @@ namespace methods
                         goto Q2E;
                     }
                 }
-                Console.WriteLine("\n");
             Q3E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q3: How do you say tribe in Maori? \nA) Iwi B) Kauri C) Mahi ");
                 string ans3 = Console.ReadLine().ToLower();
                 if (ans3 == "iwi" || ans3 == "a")
@@ -95,6 +97,7 @@ namespace methods
                 }
 
             Q4E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q4: How do you say sea in Maori? \nA) Puku B) Motu C) Moana");
                 string ans4 = Console.ReadLine().ToLower();
                 if (ans4 == "moana" || ans4 == "c")
@@ -111,6 +114,7 @@ namespace methods
                     }
                 }
             Q5E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q5: What does mahi mean? \nA) Work B) Pencil C) Water");
                 string ans5 = Console.ReadLine().ToLower();
                 if (ans5 == "work" || ans5 == "a")
@@ -127,6 +131,7 @@ namespace methods
                     }
                 }
             Q6E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q6: What does Aotearoa mean? \nA) Auckland B) New Zealand C) Wellington");
                 string ans6 = Console.ReadLine().ToLower();
                 if (ans6 == "new zealand" || ans6 == "b")
@@ -143,6 +148,7 @@ namespace methods
                     }
                 }
             Q7E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q7: What does Whānau mean? \nA) Building B) Family C) Supermarket");
                 string ans7 = Console.ReadLine().ToLower();
                 if (ans7 == "family" || ans7 == "b")
@@ -159,6 +165,7 @@ namespace methods
                     }
                 }
             Q8E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q8: What does Kia Kaha mean? \nA) Stay Strong B) Believe C) Good Night");
                 string ans8 = Console.ReadLine().ToLower();
                 if (ans8 == "stay strong" || ans8 == "a")
@@ -175,6 +182,7 @@ namespace methods
                     }
                 }
             Q9E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q9: How do you say love in Maori? \nA) Waiata B) Marae C) Aroha");
                 string ans9 = Console.ReadLine().ToLower();
                 if (ans9 == "aroha" || ans9 == "c")
@@ -191,6 +199,7 @@ namespace methods
                     }
                 }
             Q10E:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q10: What is a Kiwi? \nA) A lizard B) The word for people C) Native NZ bird");
                 string ans10 = Console.ReadLine().ToLower();
                 if (ans10 == "native nz bird" || ans10 == "c")
@@ -217,11 +226,12 @@ namespace methods
             static void Medium()
             {
             Q1M:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q1: What does motu mean? \nA) Island, B) Salt, C) Computer");
                 string ans1 = Console.ReadLine().ToLower();
                 if (ans1 == "island" || ans1 == "a")
                 {
-                    Console.WriteLine("Ka Pai! You got it correct");
+                    Console.WriteLine("You got it correct");
                 }
                 else
                 {
@@ -232,11 +242,12 @@ namespace methods
                     }
                 }
             Q2M:
+                Console.WriteLine("\n");
                 Console.WriteLine("Q2: How do you say children in Maori? \nA) Tapu, B) Moa, C) Tamariki");
                 string ans2 = Console.ReadLine().ToLower();
                 if (ans2 == "tamariki " || ans2 == "c")
                 {
-                    Console.WriteLine("Ka Pai! You got it correct");
+                    Console.WriteLine("You got it correct");
                 }
                 else
                 {
@@ -247,51 +258,131 @@ namespace methods
                     }
                 }
             Q3M:
-                Console.WriteLine("Q1: What does puku mean? \nA) Tapu, B) Moa, C) Tamariki");
+                Console.WriteLine("\n");
+                Console.WriteLine("Q3: What does puku mean? \nA) Belly, B) Brain, C) Moon");
                 string ans3 = Console.ReadLine().ToLower();
-                if (ans3 == "tamariki " || ans3 == "c")
+                if (ans3 == "belly" || ans3 == "a")
                 {
-                    Console.WriteLine("Ka Pai! You got it correct");
+                    Console.WriteLine("You got it correct");
                 }
                 else
                 {
                     Console.WriteLine("Incorrect! Try again?");
-                    string again1 = Console.ReadLine().ToLower();
-                    while (again1 == "yes")
+                    while (Console.ReadLine().ToLower() == "yes")
                     {
                         goto Q3M;
                     }
                 }
             Q4M:
-                Console.WriteLine("Q1: What does hangi mean? \nA) Traditional Maori dance, B) Food made in earth oven, C) Sun");
+                Console.WriteLine("\n");
+                Console.WriteLine("Q4: What does hangi mean? \nA) Traditional Maori dance, B) Food made in earth oven, C) Sun");
                 string ans4 = Console.ReadLine().ToLower();
                 if (ans4 == "Food made in earth oven " || ans4 == "b")
                 {
-                    Console.WriteLine("Ka Pai! You got it correct");
+                    Console.WriteLine("You got it correct");
                 }
                 else
                 {
                     Console.WriteLine("Incorrect! Try again?");
-                    string again1 = Console.ReadLine().ToLower();
-                    while (again1 == "yes")
+                    while (Console.ReadLine().ToLower() == "yes")
                     {
                         goto Q4M;
                     }
                 }
             Q5M:
-                Console.WriteLine("Q1: What does hangi mean? \nA) Traditional Maori dance, B) Food made in earth oven, C) Sun");
+                Console.WriteLine("\n");
+                Console.WriteLine("Q5: What does wahine mean? \nA) Cousin, B) Flowers, C) Woman/Wife ");
                 string ans5 = Console.ReadLine().ToLower();
-                if (ans5 == "Food made in earth oven " || ans5 == "b")
+                if (ans5 == "woman" || ans5 == "c" || ans5 == "woman/wife")
                 {
-                    Console.WriteLine("Ka Pai! You got it correct");
+                    Console.WriteLine("You got it correct");
                 }
                 else
                 {
                     Console.WriteLine("Incorrect! Try again?");
-                    string again1 = Console.ReadLine().ToLower();
-                    while (again1 == "yes")
+                    while (Console.ReadLine().ToLower() == "yes")
                     {
                         goto Q5M;
+                    }
+                }
+            Q6M:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q6: What does Iti mean? \nA) Small, B) Fan, C) Pencil ");
+                string ans6 = Console.ReadLine().ToLower();
+                if (ans6 == "woman" || ans6 == "c" || ans6 == "woman/wife")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q6M;
+                    }
+                }
+            Q7M:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q7: How do you say canoe in Maori? \nA) Waka, B) Taonga, C) Whare ");
+                string ans7 = Console.ReadLine().ToLower();
+                if (ans7 == "Waka" || ans7 == "a")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q7M;
+                    }
+                }
+            Q8M:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q8: How do you say water in Maori? \nA) Tapu, B) Wai, C) Tama ");
+                string ans8 = Console.ReadLine().ToLower();
+                if (ans8 == "Wai" || ans8 == "b")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q8M;
+                    }
+                }
+            Q9M:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q9: What is a Moa? \nA) An extinct bird, B) A type of car, C) A type of parrot ");
+                string ans9 = Console.ReadLine().ToLower();
+                if (ans9 == "an extinct bird" || ans9 == "a")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q9M;
+                    }
+                }
+            Q10M:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q10: How do you say funeral? \nA) Hui, B) Waiata, C) Tangi ");
+                string ans10 = Console.ReadLine().ToLower();
+                if (ans10 == "tangi" || ans10 == "c")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q10M;
                     }
                 }
 
