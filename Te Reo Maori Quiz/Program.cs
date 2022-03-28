@@ -20,8 +20,8 @@ namespace methods
                 {
                     case "easy":
                         Console.WriteLine("Great you selected easy! \nClick enter to begin");
-                        Console.ReadKey();
-                        Console.Clear();
+                        Console.ReadKey(); 
+                        Console.Clear(); // Clear the console for a blank canvas
                         Easy();
                         break;
                     case "medium":
@@ -46,7 +46,7 @@ namespace methods
                         break;
                 }
             }
-            static void Easy()
+            static void Easy() // Easy questions
             {
             Q1E:
                 Console.WriteLine("\n");
@@ -226,7 +226,7 @@ namespace methods
             }
 
 
-            static void Medium()
+            static void Medium() // Medoum level questions
             {
             Q1M:
                 Console.WriteLine("\n");
@@ -392,9 +392,9 @@ namespace methods
             }
 
 
-            static void Hard()
+            static void Hard() // Hard level questions
             {
-                Q1H:
+            Q1H:
                 Console.WriteLine("\n");
                 Console.WriteLine("Q1: What does Maunga mean? \nA) Mountain, B) Waiata, C) Tangi ");
                 string ans1 = Console.ReadLine().ToLower();
@@ -410,38 +410,67 @@ namespace methods
                     {
                         goto Q1H;
                     }
-                    else if (Console.ReadLine() != "no" )
-                    {
-                        Console.WriteLine("Please enter yes or no");
-
-                    }
-                }
-                do
-                {
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Q1: What does Maunga mean? \nA) Mountain, B) Waiata, C) Tangi ");
-                    string ans1 = Console.ReadLine().ToLower();
-                    if (ans1 == "mountain" || ans1 == "a")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
                     else
                     {
-                        Console.WriteLine("Incorrect! Try again?");
-                        string again1 = Console.ReadLine();
-                        if (Console.ReadLine() == "yes")
-                            while (true)
-                            {
-                                goto Q1H;
-                            }
-                        else if (Console.ReadLine() != "no")
-                        {
-                            Console.WriteLine("Please enter yes or no");
-
-                        }
+                        Console.WriteLine("Please enter yes or no");
                     }
                 }
-                while (again1 =);
+            Q2H:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q2: What does Tamāhine mean? \nA) Moon, B) Hair, C) Daughter ");
+                string ans2 = Console.ReadLine().ToLower();
+                if (ans2 == "daughter" || ans2 == "c")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                        while (Console.ReadLine().ToLower() == "yes")
+                        {
+                            goto Q2H;
+                        }
+
+                }
+             Q3H:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q3: What does Whakapapa mean? \nA) Geneology, B) Grandad, C) Store ");
+                string ans3 = Console.ReadLine().ToLower();
+                if (ans3 == "geneology" || ans3 == "a")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q3H;
+                    }
+
+                }
+            Q4H:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q4: What does Manuhiri mean? \nA) Geneology, B) Grandad, C) Store ");
+                string ans4 = Console.ReadLine().ToLower();
+                if (ans4 == "geneology" || ans4 == "a")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q3H;
+                    }
+
+                }
+
+
+
+
+
             }
 
         }
