@@ -451,9 +451,9 @@ namespace methods
                 }
             Q4H:
                 Console.WriteLine("\n");
-                Console.WriteLine("Q4: What does Manuhiri mean? \nA) Geneology, B) Grandad, C) Store ");
+                Console.WriteLine("Q4: What does Manuhiri mean? \nA) Road, B) Guests, C) Mobile Phone ");
                 string ans4 = Console.ReadLine().ToLower();
-                if (ans4 == "geneology" || ans4 == "a")
+                if (ans4 == "guests" || ans4 == "b")
                 {
                     Console.WriteLine("You got it correct");
                 }
@@ -462,7 +462,58 @@ namespace methods
                     Console.WriteLine("Incorrect! Try again?");
                     while (Console.ReadLine().ToLower() == "yes")
                     {
-                        goto Q3H;
+                        goto Q4H;
+                    }
+
+                }
+            Q5H:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q5: What does Kaumatua mean? \nA) Elder, B) Food, C) Lunch ");
+                string ans5 = Console.ReadLine().ToLower();
+                if (ans5 == "elder" || ans5 == "a")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q5H;
+                    }
+
+                }
+            Q6H:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q6: What does Tama mean? \nA) Son, B) Father, C) Grandma ");
+                string ans6 = Console.ReadLine().ToLower();
+                if (ans6 == "son" || ans6 == "a")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q6H;
+                    }
+
+                }
+            Q7H:
+                Console.WriteLine("\n");
+                Console.WriteLine("Q7: What does Tāne mean? \nA) Mother, B) Husband, C) Children ");
+                string ans7 = Console.ReadLine().ToLower();
+                if (ans7 == "husband" || ans7 == "b")
+                {
+                    Console.WriteLine("You got it correct");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try again?");
+                    while (Console.ReadLine().ToLower() == "yes")
+                    {
+                        goto Q7H;
                     }
 
                 }
@@ -472,7 +523,6 @@ namespace methods
 
 
             }
-
         }
     }
 }
