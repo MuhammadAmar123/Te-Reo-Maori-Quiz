@@ -396,7 +396,8 @@ namespace methods
             {
             Q1H:
                 string[] questions = { "What does Maunga mean?", "What does Tamāhine mean?", "What does Whakapapa mean?", "What does Manuhiri mean?", 
-                    "What does Kaumatua mean?", "What does Tama mean?", "What does Tāne mean?", "What does Whāngai mean?","What does Tuahine mean?" };
+                    "What does Kaumatua mean?", "What does Tama mean?", "What does Tāne mean?", "What does Whāngai mean?","What does Tuahine mean?", 
+                    "What does Whaikōrero mean?" }; // One whole place for all the questions
                 Console.WriteLine("\n");
                 Console.WriteLine($"Q1: {questions[0]}  \nA) Mountain, B) Waiata, C) Tangi ");
                 string ans1 = Console.ReadLine().ToLower();
@@ -407,9 +408,9 @@ namespace methods
                 else
                 {
                     Console.WriteLine("Incorrect! Try again?");
-                    while (Console.ReadLine().ToLower() == "yes")
+                    while (Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y")
                     {
-                        goto Q2H;
+                        goto Q1H;
                     }
 
                 }
@@ -546,6 +547,23 @@ namespace methods
                         while (Console.ReadLine().ToLower() == "yes")
                         {
                             goto Q9H;
+                        }
+
+                    }
+                Q10H:
+                    Console.WriteLine("\n");
+                    Console.WriteLine($"Q10: {questions[9]} \nA) Couch, B) Family, C) To make a speech ");
+                    string ans10 = Console.ReadLine().ToLower();
+                    if (ans10 == "to make a soeech" || ans10 == "c")
+                    {
+                        Console.WriteLine("You got it correct");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect! Try again?");
+                        while (Console.ReadLine().ToLower() == "yes")
+                        {
+                            goto Q10H;
                         }
 
                     }
