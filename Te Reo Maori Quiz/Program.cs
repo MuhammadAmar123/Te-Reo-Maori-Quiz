@@ -392,18 +392,31 @@ namespace methods
             }
 
 
+            static int score(bool userans)
+            {
+                int score = 0;
+                if (userans == true)
+                {
+                    ++score;
+                }
+                return score;
+            }
             static void Hard() // Hard level questions
             {
             Q1H:
                 string[] questions = { "What does Maunga mean?", "What does Tamāhine mean?", "What does Whakapapa mean?", "What does Manuhiri mean?", 
                     "What does Kaumatua mean?", "What does Tama mean?", "What does Tāne mean?", "What does Whāngai mean?","What does Tuahine mean?", 
                     "What does Whaikōrero mean?" }; // One whole place for all the questions
+                
                 Console.WriteLine("\n");
                 Console.WriteLine($"Q1: {questions[0]}  \nA) Mountain, B) Waiata, C) Tangi ");
                 string ans1 = Console.ReadLine().ToLower();
                 if (ans1 == "mountain" || ans1 == "a")
                 {
-                    Console.WriteLine("You got it correct");
+                    bool userans = true;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"You got it correct! Your score is {score}");
+                    Console.ResetColor();
                 }
                 else
                 {
@@ -567,16 +580,12 @@ namespace methods
                         }
 
                     }
-                
-
-
-
-
-
-                }
             }
+          
+        
         }
     }
+}
 
 
 
