@@ -1,7 +1,7 @@
 ﻿//This program is a Te Reo Maori quiz, created by Muhammad Amar
 using System;
 
-namespace methods
+namespace TeReoMaoriQuiz
 {
     class Program
     {
@@ -401,19 +401,35 @@ namespace methods
                 }
                 return score;
             }
+            
+            
+    
+            
             static void Hard() // Hard level questions
             {
-            Q1H:
-                string[] questions = { "What does Maunga mean?", "What does Tamāhine mean?", "What does Whakapapa mean?", "What does Manuhiri mean?", 
-                    "What does Kaumatua mean?", "What does Tama mean?", "What does Tāne mean?", "What does Whāngai mean?","What does Tuahine mean?", 
+
+                void questions(int question)
+                {
+                    string[] questions = { "What does Maunga mean?", "What does Tamāhine mean?", "What does Whakapapa mean?", "What does Manuhiri mean?",
+                    "What does Kaumatua mean?", "What does Tama mean?", "What does Tāne mean?", "What does Whāngai mean?","What does Tuahine mean?",
                     "What does Whaikōrero mean?" }; // One whole place for all the questions
-                
+                    string[] answers = { "A) Mountain, B) Waiata, C) Tangi", "A) Moon, B) Hair, C) Daughter", };
+
+                    Console.WriteLine($"Q: {questions[question]}  \n{answers[question]} ");
+
+                }
+
+
+
+                int score0 = 0;
+            Q1H:
                 Console.WriteLine("\n");
-                Console.WriteLine($"Q1: {questions[0]}  \nA) Mountain, B) Waiata, C) Tangi ");
+                int question = 0;
+                questions(question);
                 string ans1 = Console.ReadLine().ToLower();
                 if (ans1 == "mountain" || ans1 == "a")
                 {
-                    bool userans = true;
+                    ++score0;
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"You got it correct! Your score is {score}");
                     Console.ResetColor();
@@ -427,9 +443,10 @@ namespace methods
                     }
 
                 }
-            Q2H:
+               }
+                Q2H:
                     Console.WriteLine("\n");
-                    Console.WriteLine($"Q2: {questions[1]} \nA) Moon, B) Hair, C) Daughter ");
+                    
                     string ans2 = Console.ReadLine().ToLower();
                     if (ans2 == "daughter" || ans2 == "c")
                     {
@@ -444,148 +461,15 @@ namespace methods
                         }
 
                     }
-                Q3H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q3: {questions[2]} \nA) Geneology, B) Grandad, C) Store ");
-                    string ans3 = Console.ReadLine().ToLower();
-                    if (ans3 == "geneology" || ans3 == "a")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q3H;
-                        }
-
-                    }
-                Q4H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q4: {questions[3]} \nA) Road, B) Guests, C) Mobile Phone ");
-                    string ans4 = Console.ReadLine().ToLower();
-                    if (ans4 == "guests" || ans4 == "b")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q4H;
-                        }
-
-                    }
-                Q5H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q5: {questions[4]} \nA) Elder, B) Food, C) Lunch ");
-                    string ans5 = Console.ReadLine().ToLower();
-                    if (ans5 == "elder" || ans5 == "a")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q5H;
-                        }
-
-                    }
-                Q6H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q6: {questions[5]} \nA) Son, B) Father, C) Grandma ");
-                    string ans6 = Console.ReadLine().ToLower();
-                    if (ans6 == "son" || ans6 == "a")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q6H;
-                        }
-
-                    }
-                Q7H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q7: {questions[6]} \nA) Mother, B) Husband, C) Children ");
-                    string ans7 = Console.ReadLine().ToLower();
-                    if (ans7 == "husband" || ans7 == "b")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q7H;
-                        }
-
-                    }
-                Q8H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q8: {questions[7]} \nA) Poster, B) Fan, C) Adopted Child ");
-                    string ans8 = Console.ReadLine().ToLower();
-                    if (ans8 == "adopted child" || ans8 == "c")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q8H;
-                        }
-
-                    }
-                Q9H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q9: {questions[8]} \nA) Sister of a man, B) Daughter of a Woman, C) Man of a Wife ");
-                    string ans9 = Console.ReadLine().ToLower();
-                    if (ans9 == "sister of a man" || ans9 == "a")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q9H;
-                        }
-
-                    }
-                Q10H:
-                    Console.WriteLine("\n");
-                    Console.WriteLine($"Q10: {questions[9]} \nA) Couch, B) Family, C) To make a speech ");
-                    string ans10 = Console.ReadLine().ToLower();
-                    if (ans10 == "to make a soeech" || ans10 == "c")
-                    {
-                        Console.WriteLine("You got it correct");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Incorrect! Try again?");
-                        while (Console.ReadLine().ToLower() == "yes")
-                        {
-                            goto Q10H;
-                        }
-
-                    }
+               
+            
+            
             }
           
         
         }
     }
-}
+
 
 
 
