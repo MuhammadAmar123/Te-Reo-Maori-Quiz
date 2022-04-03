@@ -423,8 +423,17 @@ namespace TeReoMaoriQuiz
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine($"You got it correct! Your score is {score}");
                         Console.ResetColor();
+                        question++;
                     }
-                    question++;
+                    else if (userans != realans[question] )
+                    {
+                        Console.WriteLine("Would you like to try again?");
+                        if (Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y")
+                        {
+
+                        }
+                    }
+
                 }
 
                 while (question < 10);
