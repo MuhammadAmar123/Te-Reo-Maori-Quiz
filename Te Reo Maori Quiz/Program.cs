@@ -34,7 +34,7 @@ namespace TeReoMaoriQuiz
                         Console.WriteLine("Prepare youself for the hardest thing in your life! \nClick enter to begin");
                         Console.ReadKey();
                         Console.Clear();
-                        Hard();
+                        hard1();
                         break;
                     default:
                         Console.WriteLine("Please enter your level again"); // If user doesn't input the approriate words then it will go to the start
@@ -401,12 +401,45 @@ namespace TeReoMaoriQuiz
                 }
                 return score;
             }
-            
-            
-    
-            
+
+
+            static void hard1()
+            {
+                int score = 0;
+                int question = 0;
+                do
+                {
+                    string[] questions = { "Maunga", "Tamāhine?", "What does Whakapapa mean?", "What does Manuhiri mean?",
+                    "What does Kaumatua mean?", "What does Tama mean?", "What does Tāne mean?", "What does Whāngai mean?","What does Tuahine mean?",
+                    "What does Whaikōrero mean?" }; // One whole place for all the questions
+                    string[] answers = { "A) Mountain, B) Waiata, C) Tangi", "A) Moon, B) Hair, C) Daughter", };
+                    string[] realans = { "mountain","daughter" };
+
+                    Console.WriteLine($"Q: What does {questions[question]} mean?  \n{answers[question]} ");
+                    string userans = Console.ReadLine();
+                    if (userans == realans[question] )
+                    {
+                        ++score;
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"You got it correct! Your score is {score}");
+                        Console.ResetColor();
+                    }
+                    question++;
+                }
+
+                while (question < 10);
+            }
+
+
+
             static void Hard() // Hard level questions
             {
+
+                
+
+
+
+
 
                 void questions(int question)
                 {
@@ -421,7 +454,7 @@ namespace TeReoMaoriQuiz
 
 
 
-                int score0 = 0;
+               
             Q1H:
                 Console.WriteLine("\n");
                 int question = 0;
@@ -429,7 +462,7 @@ namespace TeReoMaoriQuiz
                 string ans1 = Console.ReadLine().ToLower();
                 if (ans1 == "mountain" || ans1 == "a")
                 {
-                    ++score0;
+
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine($"You got it correct! Your score is {score}");
                     Console.ResetColor();
