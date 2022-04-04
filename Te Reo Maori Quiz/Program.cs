@@ -48,176 +48,66 @@ namespace TeReoMaoriQuiz
             }
             static void Easy() // Easy questions
             {
-            Q1E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q1: How do you say well done in Maori? \nA) Kia Ora, B) Ka Pai, C) Taniwha ");
-                string ans1 = Console.ReadLine().ToLower();
-                if (ans1 == "ka pai" || ans1 == "b")
+
+                int score = 0;
+                int question = 0;
+                int questionNum = 1;
+                do
                 {
-                    Console.WriteLine("Ka Pai! You got it correct");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-                    while (Console.ReadLine().ToLower() == "yes")
+                tryAgain:
+                    string[] questions = { "How do you say well done in Maori?", "How do you say Food in Maori?", "How do you say tribe in Maori?", // One place for questions
+                    "How do you say sea in Maori?","What does mahi mean?", "What does Aotearoa mean?", "What does Whānau mean?", 
+                    "What does Kia Kaha mean?","How do you say love in Maori?","What is a Kiwi?" };
+                    string[] answers = { "A) Kia Ora, B) Ka Pai, C) Taniwha", "A) Kai, B) Pā C) Wai", "A) Iwi B) Kauri C) Mahi", // One whole place for options
+                    "A) Puku B) Motu C) Moana", "A) Work B) Pencil C) Water","A) Auckland B) New Zealand C) Wellington","A) Building B) Family C) Supermarket",
+                    "A) Stay Strong B) Believe C) Good Night","A) Waiata B) Marae C) Aroha","A) A lizard B) The word for people C) Native NZ bird" };
+                    string[] realans = { "b", "a", "a", "c", "a", "b", "b", "a", "c", "c" }; // One whole place for the correct answers
+
+                    Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Ask user the question
+                    string userans = Console.ReadLine();
+                    if (userans == realans[question]) // Checks for the correct answer
                     {
-                        goto Q1E;
+                        score++; // increases score
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"You got it correct! Your score is {score}");
+                        Console.ResetColor();
+                        questionNum++; // increases questions number
+                        question++;  // increases quesion
+                    }
+                    else if (userans != realans[question]) // if answer is wrong this will be executed
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("That is incorrect!");
+                        Console.ResetColor();
+                    WrongUserInput:
+                        Console.WriteLine("Would you like to try again?");
+                        string again = Console.ReadLine().ToLower();
+                        if (again == "yes" || again == "y")
+                        {
+                            score--;
+                            goto tryAgain;
+                        }
+                        else if (again == "no" || again == "n")
+                        {
+                            questionNum++;
+                            question++;
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                            goto WrongUserInput;
+                        }
                     }
                 }
-            Q2E:
+
+                while (question < 10);
+
                 Console.WriteLine("\n");
-                Console.WriteLine("Q2: How do you say Food in Maori? \nA) Kai, B) Pā C) Wai ");
-                string ans2 = Console.ReadLine().ToLower();
-                if (ans2 == "kai" || ans2 == "a")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
+                Console.WriteLine($"Congratulations! Your total score was {score} \nBye!");
 
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q2E;
-                    }
-                }
-            Q3E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q3: How do you say tribe in Maori? \nA) Iwi B) Kauri C) Mahi ");
-                string ans3 = Console.ReadLine().ToLower();
-                if (ans3 == "iwi" || ans3 == "a")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
 
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q3E;
-                    }
-                }
 
-            Q4E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q4: How do you say sea in Maori? \nA) Puku B) Motu C) Moana");
-                string ans4 = Console.ReadLine().ToLower();
-                if (ans4 == "moana" || ans4 == "c")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q4E;
-                    }
-                }
-            Q5E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q5: What does mahi mean? \nA) Work B) Pencil C) Water");
-                string ans5 = Console.ReadLine().ToLower();
-                if (ans5 == "work" || ans5 == "a")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q5E;
-                    }
-                }
-            Q6E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q6: What does Aotearoa mean? \nA) Auckland B) New Zealand C) Wellington");
-                string ans6 = Console.ReadLine().ToLower();
-                if (ans6 == "new zealand" || ans6 == "b")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q6E;
-                    }
-                }
-            Q7E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q7: What does Whānau mean? \nA) Building B) Family C) Supermarket");
-                string ans7 = Console.ReadLine().ToLower();
-                if (ans7 == "family" || ans7 == "b")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q7E;
-                    }
-                }
-            Q8E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q8: What does Kia Kaha mean? \nA) Stay Strong B) Believe C) Good Night");
-                string ans8 = Console.ReadLine().ToLower();
-                if (ans8 == "stay strong" || ans8 == "a")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q8E;
-                    }
-                }
-            Q9E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q9: How do you say love in Maori? \nA) Waiata B) Marae C) Aroha");
-                string ans9 = Console.ReadLine().ToLower();
-                if (ans9 == "aroha" || ans9 == "c")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q9E;
-                    }
-                }
-            Q10E:
-                Console.WriteLine("\n");
-                Console.WriteLine("Q10: What is a Kiwi? \nA) A lizard B) The word for people C) Native NZ bird");
-                string ans10 = Console.ReadLine().ToLower();
-                if (ans10 == "native nz bird" || ans10 == "c")
-                {
-                    Console.WriteLine("You got it correct!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try again?");
-
-                    while (Console.ReadLine().ToLower() == "yes")
-                    {
-                        goto Q10E;
-                    }
-                }
+                
 
 
 
@@ -256,34 +146,36 @@ namespace TeReoMaoriQuiz
                     }
                     else if (userans != realans[question]) // if answer is wrong this will be executed
                     {
-                        score--;
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("That is incorrect!");
                         Console.ResetColor();
+                        WrongUserInput:
                         Console.WriteLine("Would you like to try again?");
                         string again = Console.ReadLine().ToLower();
                         if (again == "yes" || again == "y")
                         {
+                            score--;
                             goto tryAgain;
                         }
-                        else
+                        else if (again == "no" || again == "n")
                         {
                             questionNum++;
                             question++;
                         }
+                        else
+                        {
+                            Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                            goto WrongUserInput;
+                        }
                     }
-                    else
-                    {
-                        Console.WriteLine("Please enter yes or no"); // If user answer wrong type of answer, it will execute
-                        goto tryAgain;
-                    }
+                   
 
                 }
 
                 while (question < 10);
 
                 Console.WriteLine("\n");
-                Console.WriteLine($"Congratulations! Your total score was {score} \n Bye!");
+                Console.WriteLine($"Congratulations! Your total score was {score} \nBye!");
             }
 
 
@@ -319,34 +211,34 @@ namespace TeReoMaoriQuiz
                     }
                     else if (userans != realans[question]) // if answer is wrong this will be executed
                     {
-                        score--;
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("That is incorrect!");
                         Console.ResetColor();
+                        WrongUserInput:
                         Console.WriteLine("Would you like to try again?");
                         string again = Console.ReadLine().ToLower();
                         if (again == "yes" || again == "y")
                         {
+                            score--;
                             goto tryAgain;
                         }
-                        else
+                        else if (again == "no" || again == "n")
                         {
                             questionNum++;
                             question++;
                         }
+                        else
+                        {
+                            Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                            goto WrongUserInput;
+                        }
                     }
-                    else
-                    {
-                        Console.WriteLine("Please enter yes or no"); // If user answer wrong type of answer, it will execute
-                        goto tryAgain;
-                    }
-
                 }
 
                 while (question < 10);
                 
                 Console.WriteLine("\n");
-                Console.WriteLine($"Congratulations! Your total score was {score} \n Bye!");
+                Console.WriteLine($"Congratulations! Your total score was {score} \nBye!");
 
             }
 
