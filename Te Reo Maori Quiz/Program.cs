@@ -2,7 +2,18 @@
 Beginning tells user what the program is. Waits for user to press enter.
 Then asks user for the level they want to pick(easy, medium or hard)
 Then informs user the level they selected and asks them to press enter to begin.
-
+When they press enter the screen clears
+When program enters level then three integer values are created with two of the value being 0 and one of them being 1
+Program enter do while until question int < than 10
+Program displays question number through int variable then gets question from questions array depending on the number in int question and options from the answers array
+User answer is stored in string userAns
+if statement checks answer
+if correct text will become green and say it is correct and reward user with 1 point
+if wrong text will become red and say incorrect and not increase the point
+if its wrong user will be asked if they want to repeat question
+if true then program will go to try again label
+if not then question and question number int will be increased and code will be repeated until int question < 10
+After 10 repeats the program will show your total score at the end
 */
 using System;
 
@@ -66,7 +77,7 @@ namespace TeReoMaoriQuiz
                     string[] realAns = { "b", "a", "a", "c", "a", "b", "b", "a", "c", "c" }; // One place for the correct answers
 
                     Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Ask user the question
-                    string userAns = Console.ReadLine();
+                    string userAns = Console.ReadLine().ToLower();
                     if (userAns == realAns[question]) // Checks for the correct answer
                     {
                         score++; // increases score
@@ -126,7 +137,7 @@ namespace TeReoMaoriQuiz
                     string[] realAns = { "a", "c", "a", "b", "c", "a", "a", "b", "a", "c" }; // One place for the correct answers
 
                     Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Asks user the question
-                    string userAns = Console.ReadLine();
+                    string userAns = Console.ReadLine().ToLower();
                     if (userAns == realAns[question]) // Checks for the correct answer
                     {
                         score++; // increases score
@@ -185,7 +196,7 @@ namespace TeReoMaoriQuiz
                     string[] realAns = { "a", "c", "a", "b", "a", "a", "b", "c", "a", "c" }; // One place for the correct answers
 
                     Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Asks user the question
-                    string userAns = Console.ReadLine();
+                    string userAns = Console.ReadLine().ToLower();
                     if (userAns == realAns[question]) // Checks for the correct answer
                     {
                         score++; // increases score
