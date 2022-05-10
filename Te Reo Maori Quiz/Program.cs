@@ -24,10 +24,15 @@ namespace TeReoMaoriQuiz
         static void Main(string[] args)
         {
             Intro();
-            void Intro()
+            static void Intro()
             {
                 Console.Write("This is a Te Reo Maori Quiz! \nPress any key to start!");
                 Console.ReadKey(); //waits for user to input key
+                Console.Clear();
+                LevelSelect();
+            }
+            static void LevelSelect()
+            {
                 Console.WriteLine("Would you like an easy, medium, or hard level?");
                 string level = Console.ReadLine().ToLower();
                 switch (level)
@@ -60,6 +65,7 @@ namespace TeReoMaoriQuiz
                         break;
                 }
             }
+
             static void Easy() // Easy questions
             {
                 int score = 0;
@@ -68,7 +74,7 @@ namespace TeReoMaoriQuiz
                 do
                 {
                 tryAgain:
-                    string[] questions = { "How do you say well done in Maori?", "How do you say Food in Maori?", "How do you say tribe in Maori?", 
+                    string[] questions = { "How do you say well done in Maori?", "How do you say Food in Maori?", "How do you say tribe in Maori?",
                     "How do you say sea in Maori?","What does mahi mean?", "What does Aotearoa mean?", "What does Whānau mean?", "What does Kia Kaha mean?",
                      "How do you say love in Maori?","What is a Kiwi?" }; // One place for easy questions
                     string[] answers = { "A) Kia Ora, B) Ka Pai, C) Taniwha", "A) Kai, B) Pā C) Wai", "A) Iwi B) Kauri C) Mahi", // One place for options
@@ -116,9 +122,12 @@ namespace TeReoMaoriQuiz
                 while (question < 10);
 
                 Console.WriteLine("\n");
-                Console.WriteLine($"Congratulations! Your total score was {score} \nBye!");
-            }
+                Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
+                Console.ReadKey();
+                Console.Clear();
+                LevelSelect();
 
+            }
 
             static void Medium() // Medium level questions
             {
@@ -152,7 +161,7 @@ namespace TeReoMaoriQuiz
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("That is incorrect!");
                         Console.ResetColor();
-                        WrongUserInput:
+                    WrongUserInput:
                         Console.WriteLine("Would you like to try again?");
                         string again = Console.ReadLine().ToLower();
                         if (again == "yes" || again == "y")
@@ -175,7 +184,10 @@ namespace TeReoMaoriQuiz
                 while (question < 10);
 
                 Console.WriteLine("\n");
-                Console.WriteLine($"Congratulations! Your total score was {score} \nBye!");
+                Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
+                Console.ReadKey();
+                Console.Clear();
+                LevelSelect();
             }
 
 
@@ -189,7 +201,7 @@ namespace TeReoMaoriQuiz
                 tryAgain:
                     string[] questions = { "What does Maunga mean?", "What does Tamāhine mean?", "What does Whakapapa mean?", "What does Manuhiri mean?",// One whole place for hard questions
                     "What does Kaumatua mean?", "What does Tama mean?", "What does Tāne mean?", "What does Whāngai mean?","What does Tuahine mean?",
-                    "What does Whaikōrero mean?" }; 
+                    "What does Whaikōrero mean?" };
                     string[] answers = { "A) Mountain, B) Waiata, C) Tangi", "A) Moon, B) Hair, C) Daughter", "A) Geneology, B) Grandad, C) Store", // One place for options
                     "A) Road, B) Guests, C) Mobile Phone", "A) Elder, B) Food, C) Lunch","A) Son, B) Father, C) Grandma","A) Mother, B) Husband, C) Children",
                     "A) Poster, B) Fan, C) Adopted Child","A) Sister of a man, B) Daughter of a Woman, C) Man of a Wife","A) Couch, B) Family, C) To make a speech" };
@@ -206,12 +218,12 @@ namespace TeReoMaoriQuiz
                         questionNum++; // increases question number
                         question++;  // increases quesion
                     }
-                    else if (userAns != realAns[question]) 
+                    else if (userAns != realAns[question])
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("That is incorrect!");
                         Console.ResetColor();
-                        WrongUserInput:
+                    WrongUserInput:
                         Console.WriteLine("Would you like to try again?");
                         string again = Console.ReadLine().ToLower();
                         if (again == "yes" || again == "y")
@@ -232,9 +244,12 @@ namespace TeReoMaoriQuiz
                     }
                 }
                 while (question < 10);
-                
+
                 Console.WriteLine("\n");
-                Console.WriteLine($"Congratulations! Your total score was {score} \nBye!");
+                Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
+                Console.ReadKey();
+                Console.Clear();
+                LevelSelect();
 
             }
 
