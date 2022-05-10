@@ -13,7 +13,8 @@ if wrong text will become red and say incorrect and not increase the point
 if its wrong user will be asked if they want to repeat question
 if true then program will go to try again label
 if not then question and question number int will be increased and code will be repeated until int question < 10
-After 10 repeats the program will show your total score at the end
+After 10 repeats the program will show your total score at the end and go to Main Menu so user can try again
+User can 
 */
 using System;
 
@@ -26,13 +27,13 @@ namespace TeReoMaoriQuiz
             Intro();
             static void Intro()
             {
-                Console.Write("This is a Te Reo Maori Quiz! \nPress any key to start!");
+                Console.WriteLine("This is a Te Reo Maori Quiz! \nPress any key to start! or press E to exit");
                 Console.ReadKey(); //waits for user to input key
+                if (Console.ReadLine().ToLower() == "e")
+                {
+                    Environment.Exit(0);
+                }
                 Console.Clear();
-                LevelSelect();
-            }
-            static void LevelSelect()
-            {
                 Console.WriteLine("Would you like an easy, medium, or hard level?");
                 string level = Console.ReadLine().ToLower();
                 switch (level)
@@ -125,7 +126,7 @@ namespace TeReoMaoriQuiz
                 Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
                 Console.ReadKey();
                 Console.Clear();
-                LevelSelect();
+                Intro();
 
             }
 
@@ -187,7 +188,7 @@ namespace TeReoMaoriQuiz
                 Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
                 Console.ReadKey();
                 Console.Clear();
-                LevelSelect();
+                Intro();
             }
 
 
@@ -249,7 +250,7 @@ namespace TeReoMaoriQuiz
                 Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
                 Console.ReadKey();
                 Console.Clear();
-                LevelSelect();
+                Intro();
 
             }
 
