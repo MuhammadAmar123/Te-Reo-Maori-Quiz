@@ -1,6 +1,7 @@
 ﻿/*This program is a Te Reo Maori quiz, created by Muhammad Amar. This program will help people learn about Te Reo Maori by asking them what certain words mean in Maori.
+Start
 Beginning tells user what the program is. Waits for user to press enter.
-Then asks user for the level they want to pick(easy, medium or hard)
+Then asks user for the level they want to pick (easy, medium or hard)
 Then informs user the level they selected and asks them to press enter to begin.
 When they press enter the screen clears
 When program enters level then three integer values are created with two of the value being 0 and one of them being 1
@@ -11,10 +12,12 @@ if statement checks answer
 if correct text will become green and say it is correct and reward user with 1 point
 if wrong text will become red and say incorrect and not increase the point
 if its wrong user will be asked if they want to repeat question
-if true then program will go to try again label
+if true then program will go to try again label and decrease one point
 if not then question and question number int will be increased and code will be repeated until int question < 10
-After 10 repeats the program will show your total score at the end and go to Main Menu so user can try again
-User can 
+After 10 repeats the program will show your total score at the end
+User then presses enter so then the program returns to MainMenu method
+User can either choose another level or exit the program
+End
 */
 using System;
 
@@ -24,16 +27,25 @@ namespace TeReoMaoriQuiz
     {
         static void Main(string[] args)
         {
-            Intro();
-            static void Intro()
+
+            MainMenu();
+            static void MainMenu()
             {
                 Console.WriteLine("This is a Te Reo Maori Quiz! \nPress any key to start! or press E to exit");
-                Console.ReadKey(); //waits for user to input key
                 if (Console.ReadLine().ToLower() == "e")
                 {
                     Environment.Exit(0);
                 }
-                Console.Clear();
+                else
+                {
+                    Console.Clear();
+                    Intro();
+                }
+            }
+            
+            static void Intro()
+            {
+               
                 Console.WriteLine("Would you like an easy, medium, or hard level?");
                 string level = Console.ReadLine().ToLower();
                 switch (level)
@@ -57,9 +69,11 @@ namespace TeReoMaoriQuiz
                         Hard();
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Please enter your level again"); // If user doesn't input the approriate words then it will go to the start
                         while (level != "easy" || level != " medium" || level != "hard")
                         {
+                            Console.ResetColor();
                             Console.WriteLine("\n");
                             Intro(); // go to the starting of the method
                         }
@@ -126,7 +140,7 @@ namespace TeReoMaoriQuiz
                 Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
                 Console.ReadKey();
                 Console.Clear();
-                Intro();
+                MainMenu();
 
             }
 
@@ -188,7 +202,7 @@ namespace TeReoMaoriQuiz
                 Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
                 Console.ReadKey();
                 Console.Clear();
-                Intro();
+                MainMenu();
             }
 
 
@@ -250,7 +264,7 @@ namespace TeReoMaoriQuiz
                 Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
                 Console.ReadKey();
                 Console.Clear();
-                Intro();
+                MainMenu();
 
             }
 
