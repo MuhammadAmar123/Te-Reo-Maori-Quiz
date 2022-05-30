@@ -31,7 +31,7 @@ namespace TeReoMaoriQuiz
             MainMenu();
             static void MainMenu()
             {
-                Console.WriteLine("This is a Te Reo Maori Quiz! \nPress any key to start! or press E to exit");
+                Console.WriteLine("This is a Te Reo Maori Quiz! \nPress Enter to start! or press E to exit");
                 if (Console.ReadLine().ToLower() == "e")
                 {
                     Environment.Exit(0);
@@ -128,7 +128,9 @@ namespace TeReoMaoriQuiz
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                            Console.ResetColor();
                             goto WrongUserInput;
                         }
                     }
@@ -191,7 +193,9 @@ namespace TeReoMaoriQuiz
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                            Console.ResetColor();
                             goto WrongUserInput;
                         }
                     }
@@ -253,13 +257,14 @@ namespace TeReoMaoriQuiz
                         }
                         else
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nPlease enter yes or no");
+                            Console.ResetColor();
                             goto WrongUserInput;
                         }
                     }
                 }
                 while (question < 10);
-
                 Console.WriteLine("\n");
                 Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
                 Console.ReadKey();
