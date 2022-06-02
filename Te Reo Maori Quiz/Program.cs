@@ -99,52 +99,63 @@ namespace TeReoMaoriQuiz
 
                     Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Ask user the question
                     string userAns = Console.ReadLine().ToLower();
-                    if (userAns == realAns[question]) // Checks for the correct answer
+                    if (!string.IsNullOrEmpty(userAns))
+
                     {
-                        score++; // increases score
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"You got it correct! Your score is {score}");
-                        Console.ResetColor();
-                        questionNum++; // increases questions number
-                        question++;  // increases quesion
-                    }
-                    else if (userAns != realAns[question]) // if answer is wrong this will be executed
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("That is incorrect!");
-                        Console.ResetColor();
-                    WrongUserInput:
-                        Console.WriteLine("Would you like to try again?");
-                        string again = Console.ReadLine().ToLower();
-                        if (again == "yes" || again == "y")
+                        if (userAns == realAns[question]) // Checks for the correct answer
                         {
-                            score--;
-                            goto tryAgain;
+                            score++; // increases score
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"You got it correct! Your score is {score}");
+                            Console.ResetColor();
+                            questionNum++; // increases questions number
+                            question++;  // increases quesion
                         }
-                        else if (again == "no" || again == "n")
-                        {
-                            questionNum++;
-                            question++;
-                        }
-                        else
+                        else if (userAns != realAns[question]) // if answer is wrong this will be executed
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                            Console.WriteLine("That is incorrect!");
                             Console.ResetColor();
-                            goto WrongUserInput;
-                        }
+                        WrongUserInput:
+                            Console.WriteLine("Would you like to try again?");
+                            string again = Console.ReadLine().ToLower();
+                            if (again == "yes" || again == "y")
+                            {
+                                score--;
+                                goto tryAgain;
+                            }
+                            else if (again == "no" || again == "n")
+                            {
+                                questionNum++;
+                                question++;
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                                Console.ResetColor();
+                                goto WrongUserInput;
+                            }
+                        } 
                     }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter something");
+                        Console.ResetColor();
+                    }
+                    
                 }
 
-                while (question < 10);
+                    while (question < 10) ;
 
-                Console.WriteLine("\n");
-                Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
-                Console.ReadKey();
-                Console.Clear();
-                MainMenu();
+                    Console.WriteLine("\n");
+                    Console.WriteLine($"Congratulations! Your total score was {score} \nPress Enter to go to Main Menu");
+                    Console.ReadKey();
+                    Console.Clear();
+                    MainMenu();
 
-            }
+                }
 
             static void Medium() // Medium level questions
             {
@@ -164,40 +175,49 @@ namespace TeReoMaoriQuiz
 
                     Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Asks user the question
                     string userAns = Console.ReadLine().ToLower();
-                    if (userAns == realAns[question]) // Checks for the correct answer
+                    if (!string.IsNullOrEmpty(userAns))
                     {
-                        score++; // increases score
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"You got it correct! Your score is {score}");
-                        Console.ResetColor();
-                        questionNum++; // increases questions number
-                        question++;  // increases quesion
-                    }
-                    else if (userAns != realAns[question]) // if answer is wrong this will be executed
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("That is incorrect!");
-                        Console.ResetColor();
-                    WrongUserInput:
-                        Console.WriteLine("Would you like to try again?");
-                        string again = Console.ReadLine().ToLower();
-                        if (again == "yes" || again == "y")
+                        if (userAns == realAns[question]) // Checks for the correct answer
                         {
-                            score--;
-                            goto tryAgain;
+                            score++; // increases score
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"You got it correct! Your score is {score}");
+                            Console.ResetColor();
+                            questionNum++; // increases questions number
+                            question++;  // increases quesion
                         }
-                        else if (again == "no" || again == "n")
-                        {
-                            questionNum++;
-                            question++;
-                        }
-                        else
+                        else if (userAns != realAns[question]) // if answer is wrong this will be executed
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                            Console.WriteLine("That is incorrect!");
                             Console.ResetColor();
-                            goto WrongUserInput;
+                        WrongUserInput:
+                            Console.WriteLine("Would you like to try again?");
+                            string again = Console.ReadLine().ToLower();
+                            if (again == "yes" || again == "y")
+                            {
+                                score--;
+                                goto tryAgain;
+                            }
+                            else if (again == "no" || again == "n")
+                            {
+                                questionNum++;
+                                question++;
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("\nPlease enter yes or no"); // If user answer wrong type of answer, it will execute
+                                Console.ResetColor();
+                                goto WrongUserInput;
+                            }
                         }
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter something");
+                        Console.ResetColor();
                     }
                 }
                 while (question < 10);
@@ -228,40 +248,49 @@ namespace TeReoMaoriQuiz
 
                     Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Asks user the question
                     string userAns = Console.ReadLine().ToLower();
-                    if (userAns == realAns[question]) // Checks for the correct answer
+                    if (!string.IsNullOrEmpty(userAns))
                     {
-                        score++; // increases score
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"You got it correct! Your score is {score}");
-                        Console.ResetColor();
-                        questionNum++; // increases question number
-                        question++;  // increases quesion
-                    }
-                    else if (userAns != realAns[question])
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("That is incorrect!");
-                        Console.ResetColor();
-                    WrongUserInput:
-                        Console.WriteLine("Would you like to try again?");
-                        string again = Console.ReadLine().ToLower();
-                        if (again == "yes" || again == "y")
+                        if (userAns == realAns[question]) // Checks for the correct answer
                         {
-                            score--;
-                            goto tryAgain;
+                            score++; // increases score
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine($"You got it correct! Your score is {score}");
+                            Console.ResetColor();
+                            questionNum++; // increases question number
+                            question++;  // increases quesion
                         }
-                        else if (again == "no" || again == "n")
-                        {
-                            questionNum++;
-                            question++;
-                        }
-                        else
+                        else if (userAns != realAns[question])
                         {
                             Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("\nPlease enter yes or no");
+                            Console.WriteLine("That is incorrect!");
                             Console.ResetColor();
-                            goto WrongUserInput;
+                        WrongUserInput:
+                            Console.WriteLine("Would you like to try again?");
+                            string again = Console.ReadLine().ToLower();
+                            if (again == "yes" || again == "y")
+                            {
+                                score--;
+                                goto tryAgain;
+                            }
+                            else if (again == "no" || again == "n")
+                            {
+                                questionNum++;
+                                question++;
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.WriteLine("\nPlease enter yes or no");
+                                Console.ResetColor();
+                                goto WrongUserInput;
+                            }
                         }
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Please enter something");
+                        Console.ResetColor();
                     }
                 }
                 while (question < 10);
