@@ -51,18 +51,21 @@ namespace TeReoMaoriQuiz
                 switch (level)
                 {
                     case "easy":
+                    case "e":
                         Console.WriteLine("Great you selected easy! \nClick enter to begin");
                         Console.ReadKey();
                         Console.Clear(); // Clear the console for a blank canvas
                         Easy();
                         break;
                     case "medium":
+                    case "m":
                         Console.WriteLine("Great you selected medium! \nClick enter to begin");
                         Console.ReadKey();
                         Console.Clear();
                         Medium();
                         break;
                     case "hard":
+                    case "h":
                         Console.WriteLine("Prepare youself for the hardest thing in your life! \nClick enter to begin");
                         Console.ReadKey();
                         Console.Clear();
@@ -170,7 +173,7 @@ namespace TeReoMaoriQuiz
                     "How do you say funeral in Maori?" }; // One place for all medium questions
                     string[] answers = { "A) Island, B) Salt, C) Computer", "A) Tapu, B) Moa, C) Tamariki", "A) Belly, B) Brain, C) Moon", // One place for options
                     "A) Traditional Maori dance, B) Food made in earth oven, C) Sun", "A) Cousin, B) Flowers, C) Woman/Wife","A) Small, B) Fan, C) Pencil","A) Waka, B) Taonga, C) Whare",
-                    "nA) Tapu, B) Wai, C) Tama","A) An extinct bird, B) A type of car, C) A type of parrot","A) Hui, B) Waiata, C) Tangi" };
+                    "A) Tapu, B) Wai, C) Tama","A) An extinct bird, B) A type of car, C) A type of parrot","A) Hui, B) Waiata, C) Tangi" };
                     string[] realAns = { "a", "c", "a", "b", "c", "a", "a", "b", "a", "c" }; // One place for the correct answers
 
                     Console.WriteLine($"\nQ{questionNum}: {questions[question]}   \n{answers[question]} "); // Asks user the question
